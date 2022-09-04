@@ -1,0 +1,14 @@
+{
+  "name": "self-driving-car-ai",
+  "version": "1.0.0",
+  "description": "Newural network game from scratch",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jose Sousa",
+  "license": "ISC",
+  "devDependencies": {
+    "prettier": "^2.7.1"
+  }
+}
