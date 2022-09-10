@@ -1,7 +1,7 @@
 {
   "name": "self-driving-car-ai",
   "version": "1.0.0",
-  "description": "Newural network game from scratch",
+  "description": "Neural network game from scratch",
   "main": "index.html",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -9,6 +9,10 @@
   "author": "Jose Sousa",
   "license": "ISC",
   "devDependencies": {
+    "eslint": "^8.22.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-import": "^2.26.0",
     "prettier": "^2.7.1"
   }
 }
