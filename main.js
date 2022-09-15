@@ -1,11 +1,12 @@
 const canvas = document.getElementById("myCanvas");
 
-canvas.offsetWidth = 200;
+const width = (canvas.width = 300);
 
 const ctx = canvas.getContext("2d");
+const road = new Road(width / 2, width * 0.9);
 const car = new Car(100, 100, 30, 50);
-
-// car.draw(ctx);
+console.table(road);
+animate();
 
 function animate() {
   car.update();
@@ -13,5 +14,3 @@ function animate() {
   car.draw(ctx);
   requestAnimationFrame(animate);
 }
-
-animate();
