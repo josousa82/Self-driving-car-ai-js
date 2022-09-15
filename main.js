@@ -1,9 +1,9 @@
 const canvas = document.getElementById("myCanvas");
 
-const width = (canvas.width = 300);
+canvas.width = 200;
 
 const ctx = canvas.getContext("2d");
-const road = new Road(width / 2, width * 0.9);
+const road = new Road(canvas.width / 2, canvas.width * 0.9);
 const car = new Car(100, 100, 30, 50);
 console.table(road);
 animate();
@@ -11,6 +11,9 @@ animate();
 function animate() {
   car.update();
   canvas.height = window.innerHeight;
+  ctx.save();
+  road.draw(ctx);
   car.draw(ctx);
+  ctx.restore();
   requestAnimationFrame(animate);
 }
