@@ -10,16 +10,22 @@ class Road {
     const infinity = 1000000;
     this.top = -infinity;
     this.bottom = infinity;
-
-
+    this.topLeft = { x: this.left, y: this.top };
+    this.topRight = { x: this.right, y: this.top };
+    this.bottomLeft = { x: this.left, y: this.bottom };
+    this.bottomRight = { x: this.right, y: this.bottom };
+    this.borders = [
+      [this.topLeft, this.bottomLeft],
+      [this.topRight, this.bottomRight],
+    ];
   }
 
   getLaneCenter(laneIndex) {
     const laneWidth = this.width / this.laneCount;
     return (
-        this.left +
-        laneWidth / 2 +
-        Math.min(laneIndex, this.laneCount - 1) * laneWidth
+      this.left +
+      laneWidth / 2 +
+      Math.min(laneIndex, this.laneCount - 1) * laneWidth
     );
   }
 
