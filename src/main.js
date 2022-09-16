@@ -10,10 +10,16 @@ animate();
 
 function animate() {
   car.update();
+  const carPositionInRoad = -car.y + canvas.height * 0.7;
   canvas.height = window.innerHeight;
+
+
   ctx.save();
+  ctx.translate(0, carPositionInRoad);
+
   road.draw(ctx);
   car.draw(ctx);
+
   ctx.restore();
   requestAnimationFrame(animate);
 }
