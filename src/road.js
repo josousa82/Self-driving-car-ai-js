@@ -30,11 +30,10 @@ class Road {
   }
 
   draw(ctx) {
-    ctx.strokeStyle = "white";
     ctx.lineWidth = 5;
+    ctx.strokeStyle = "white";
 
-    ctx.stroke();
-    for (let i = 0; i <= this.laneCount; i++) {
+    for (let i = 1; i <= this.laneCount - 1; i++) {
       const x = lerp(this.left, this.right, i / this.laneCount);
       if (i > 0 && i < this.laneCount) {
         ctx.setLineDash([20, 20]);
@@ -46,5 +45,12 @@ class Road {
       ctx.lineTo(x, this.bottom);
       ctx.stroke();
     }
+    ctx.setLineDash([]);
+    this.borders.forEach((border) => {
+      ctx.beginPath();
+      ctx.moveTo(border[0].x, border[0].y);
+      ctx.lineTo(border[1].x, border[1].y);
+      ctx.stroke();
+    });
   }
 }
